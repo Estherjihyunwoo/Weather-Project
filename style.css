@@ -1,0 +1,99 @@
+h1 {
+  text-align: center;
+  color: #939aa9;
+  margin-top: 60px;
+  font-family: "Roboto", sans-serif;
+}
+
+form {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+a {
+  font-size: 30px;
+  font-family: "Roboto", serif;
+  margin-top: 30px;
+}
+
+span {
+  text-align: center;
+}
+
+.card {
+  background: white;
+  max-width: 800px;
+}
+.location {
+  font-size: 20px;
+  text-align: center;
+  color: #939aa9;
+  margin-top: 30px;
+  font-family: "Peddana", serif;
+}
+
+.low {
+  font-size: 20px;
+  color: #939aa9;
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.high {
+  font-size: 20px;
+  color: #939aa9;
+  text-align: center;
+  color: #939aa9;
+  padding-top: 50px;
+  font-family: "Roboto", serif;
+}
+
+.nextdays {
+  text-align: left;
+  color: #939aa9;
+  padding-top: 0;
+  padding-left: 30px;
+  font-size: 18px;
+  font-family: "Roboto", serif;
+}
+
+.bring {
+  text-align: left;
+  font-size: 18px;
+  color: #939aa9;
+  font-family: "Roboto", serif;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.detail {
+  color: #939aa9;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Roboto", serif;
+  margin-top: 30px;
+}
+
+.card {
+  display: block;
+  margin: 120px;
+}
+
+#current-date {
+  font-size: 18px;
+  color: #939aa9;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Roboto", serif;
+}
+
+#temperature {
+  font-size: 30px;
+  display: block;
+  margin: 0 auto;
+  font-family: "Roboto", serif;
+  color: black;
+  margin-top: 30px;
+}
