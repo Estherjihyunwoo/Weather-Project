@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Project</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="src/styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="container">
+
+          <!--<p class="location">choose location 📍</p>-->
+
+          <form id="city-form">
+            <div class="row">
+              <div class="col-6">
+                <input types="search" placeholder="📍 Type a city ..." autofocus="on" autocomplete="off"
+                  class="form-control shadow-sm" id="city-input" /> </div>
+
+              <div class="col-3-sm"> <input type="submit" value="search" class="form-control btn btn-primary shadow-sm"
+                  id="button" /></div>
+              <div class="col-3" id="current"> <input type="submit" value="current location"
+                  class="btn btn-success shadow-sm" id="button2" /> </div>
+            </div>
+        </div>
+
+        </form>
+
+        <h1 id="city">LOS ANGELES</h1>
+        <p id="current-date"></p>
+
+        <!--<div class="col-4"><p class="low">20 C LOW</p></div>-->
+
+        <span class="temperature" id="temperature"> 🌤 21
+
+          <a href="#" id="celsius"> °C</a> /
+          <a href="#" id="fahrenheit">°F</a>
+
+        </span>
+
+
+
+        <!--<div class="col-4"><p class="high">25 C HIGH</p></div>-->
+
+
+        <div class="detail">
+          <div class="row">
+            <div class="col-3 col-sm-3" id="feels">
+              <p>Feels like 20 C</p>
+            </div>
+            <div class="col-3 col-sm-3" id="precipitation">
+              <p>Precipitation: 1%</p>
+            </div>
+            <div class="col-3 col-sm-3" id="wind">
+              <p>🌬Wind: 0 mph</p>
+            </div>
+            <div class="col-3 col-sm-3" id="humidity">
+              <p>💧Humidity:59%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <p class="bring">
+        It's sunny today. Don't forget your sunglasses! 🕶
+      </p>
+      <p class="nextdays">Forecast for the next days 👉</p>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <script src="src/index.js"></script>
+</body>
+
 </html>
