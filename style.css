@@ -3,6 +3,7 @@ h1 {
   color: #939aa9;
   margin-top: 60px;
   font-family: "Roboto", sans-serif;
+  padding-top: 60px;
 }
 
 form {
@@ -79,6 +80,10 @@ span {
 .card {
   display: block;
   margin: 120px;
+}
+
+.coded {
+  text-align: center;
 }
 
 #current-date {
