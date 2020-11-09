@@ -44,7 +44,8 @@ span {
 
 .bring {
   margin-left: 50px;
-  margin-top: -10px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   font-size: 16px;
   color: #939aa9;
   font-family: "Roboto", serif;
@@ -78,7 +79,7 @@ span {
   font-family: "Roboto", serif;
 }
 #next {
-  margin-left: 80px;
+  margin-left: 50px;
   color: lightblue;
   font-family: "Roboto", serif;
 }
