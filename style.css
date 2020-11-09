@@ -42,31 +42,12 @@ span {
   font-family: "Roboto", sans-serif;
 }
 
-.high {
-  font-size: 20px;
-  color: #939aa9;
-  text-align: center;
-  color: #939aa9;
-  padding-top: 50px;
-  font-family: "Roboto", serif;
-}
-
-.nextdays {
-  text-align: left;
-  color: #939aa9;
-  padding-top: 0;
-  padding-left: 30px;
-  font-size: 18px;
-  font-family: "Roboto", serif;
-}
-
 .bring {
-  text-align: left;
-  font-size: 18px;
+  margin-left: 50px;
+  margin-top: -10px;
+  font-size: 16px;
   color: #939aa9;
   font-family: "Roboto", serif;
-  padding-top: 30px;
-  padding-left: 30px;
 }
 
 .detail {
@@ -74,7 +55,7 @@ span {
   text-align: center;
   font-size: 15px;
   font-family: "Roboto", serif;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .card {
@@ -89,17 +70,21 @@ span {
   font-size: 14px;
 }
 
-.next {
-  display: block;
-  text-align: left;
-  margin: 20px;
-}
-
 #current-date {
   font-size: 18px;
   color: #939aa9;
   text-align: center;
   margin-top: 20px;
+  font-family: "Roboto", serif;
+}
+#next {
+  margin-left: 80px;
+  color: lightblue;
+  font-family: "Roboto", serif;
+}
+
+#next:hover {
+  color: black;
   font-family: "Roboto", serif;
 }
 

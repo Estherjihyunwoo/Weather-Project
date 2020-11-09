@@ -72,6 +72,9 @@ function showWeather(response) {
   let feelElement = Math.round(response.data.main.feels_like);
   let element = document.querySelector("#feels");
   element.innerHTML = `Feels like ${feelElement} °C`;
+  let lowElement = Math.round(response.data.main.temp_min);
+  let low = document.querySelector("#low");
+  low.innerHTML = `Low Temperature ${lowElement} °C`;
 }
 
 function search(event) {
