@@ -89,6 +89,12 @@ span {
   font-size: 14px;
 }
 
+.next {
+  display: block;
+  text-align: left;
+  margin: 20px;
+}
+
 #current-date {
   font-size: 18px;
   color: #939aa9;
