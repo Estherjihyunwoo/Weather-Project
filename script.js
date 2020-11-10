@@ -1,5 +1,3 @@
-//Feature #1
-
 function current(date) {
   let days = [
     "Sunday",
@@ -46,7 +44,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `☁️ ${temperature} °C | °F`;
+  temperatureElement.innerHTML = `${temperature} °C | °F`;
   let currentLocation = document.querySelector("h1");
   let location = response.data.name;
   currentLocation.innerHTML = location;
@@ -62,13 +60,13 @@ function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let temperatureElement = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = `${temperatureElement} °C / °F `;
+  temp.innerHTML = `${temperatureElement} °C | °F `;
   let humidityElement = response.data.main.humidity;
   let hum = document.querySelector("#humidity");
-  hum.innerHTML = `💧 Humidity:${humidityElement}%`;
+  hum.innerHTML = `💧 Humidity ${humidityElement}%`;
   let windElement = response.data.wind.speed;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `🌬 Wind: ${windElement} mph`;
+  wind.innerHTML = `🌬 Wind ${windElement} mph`;
   let feelElement = Math.round(response.data.main.feels_like);
   let element = document.querySelector("#feels");
   element.innerHTML = `Feels like ${feelElement} °C`;
