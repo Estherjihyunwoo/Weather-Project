@@ -22,7 +22,7 @@ function current(date) {
   currents.innerHTML = `${currentDay} ${currentHour}:${currentMinute}`;
 }
 
-let currents = document.querySelector("#current-date");
+let currents = document.querySelector("#date");
 let currentTime = new Date();
 console.log(current(currentTime));
 
@@ -53,7 +53,22 @@ function showTemperature(response) {
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
 
-//Feature #2
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
 
 function showWeather(response) {
   console.log(response.data);
@@ -73,6 +88,8 @@ function showWeather(response) {
   let lowElement = Math.round(response.data.main.temp_min);
   let low = document.querySelector("#low");
   low.innerHTML = `Low Temperature ${lowElement} °C`;
+  let dateElement = dococument.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(event) {
