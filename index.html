@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather</title>
+  <title>Weather App</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -19,9 +19,6 @@
 
     <div class="card">
       <div class="card-body">
-        <div class="container">
-
-          <!--<p class="location">choose location 📍</p>-->
 
           <form id="city-form">
             <div class="row">
@@ -33,7 +30,7 @@
                   id="button" /></div>
               <div class="col-3" id="current"> <input type="submit" value="current location"
                   class="btn btn-success shadow-sm" id="button2" /> </div>
-            </div>
+           
         </div>
 
         </form>
@@ -41,19 +38,15 @@
         <h1 id="city">LOS ANGELES</h1>
         <p id="current-date"></p>
 
-        <!--<div class="col-4"><p class="low">20 C LOW</p></div>-->
-
-        <span class="temperature" id="temperature"> 🌤 21
+        <div>
+        
+        <span class="temperature" id="temperature"> <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny" /> 21
 
           <a href="#" id="celsius"> °C</a> | 
           <a href="#" id="fahrenheit">°F</a>
 
         </span>
-
-
-
-        <!--<div class="col-4"><p class="high">25 C HIGH</p></div>-->
-
+      </div>
 
         <div class="detail">
           <div class="row">
@@ -79,15 +72,11 @@
           <button type="button" class="btn btn-light" id="next">Forecast for the next days 👉</button>
         </p>
 
-      
-    
-       
-      
-  
-
     </div>
+    <small>
 <a href="https://github.com/Estherjihyunwoo/Weather-Project"
-    target="_blank" class =resource>Open-source Code by Esther Woo </a> 
+    target="_blank"> Open-source code</a> by Esther Woo 
+    </small>
   </div>
   </div>
   </div>

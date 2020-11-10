@@ -46,7 +46,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature} °C / °F`;
+  temperatureElement.innerHTML = `☁️ ${temperature} °C | °F`;
   let currentLocation = document.querySelector("h1");
   let location = response.data.name;
   currentLocation.innerHTML = location;
@@ -96,11 +96,11 @@ cityForm.addEventListener("submit", search);
 //fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 //Bonus
-//function convertToFahrenheit(event) {
-// event.preventDefault();
-//let temperatureElement = document.querySelector("#temperature");
-//temperatureElement.innerHTML = 70;
-//}
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+}
 
 function convertToCelsius(event) {
   event.preventDefault();
@@ -110,6 +110,9 @@ function convertToCelsius(event) {
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+let celsiusTemperature = Math.round(temperature);
+let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
 
 //let weather = {
 //paris: {
@@ -138,8 +141,6 @@ celsiusLink.addEventListener("click", convertToCelsius);
 //if (weather[city] !== undefined) {
 // let temperature = weather[city].temp;
 // let humidity = weather[city].humidity;
-//let celsiusTemperature = Math.round(temperature);
-//let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
 
 //alert(
 // `It is currently ${celsiusTemperature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%`
