@@ -19,6 +19,7 @@ small {
   margin-top: -100px;
   margin-left: 120px;
   color: #939aa9;
+  max-width: 800px;
 }
 
 span {
@@ -28,6 +29,7 @@ span {
 .card {
   background: white;
   max-width: 800px;
+  margin: 0 auto;
 }
 .location {
   font-size: 20px;
