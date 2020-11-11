@@ -113,20 +113,26 @@ function showWeather(response) {
   );
 }
 
-function search(event) {
-  event.preventDefault();
-  let citySearch = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  citySearch.innerHTML = cityInput.value;
+function search(city) {
   let apiKey = "0b69e36f14bcfaa42ecb4ad8f3652168";
   let units = "metric";
-  let city = document.querySelector("#city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  //let citySearch = document.querySelector("#city");
+  let cityInput = document.querySelector("#city-input");
+  //citySearch.innerHTML = cityInput.value;
+  //let city = document.querySelector("#city-input").value;
+  search(cityInputElement.value);
+}
+
+search("Los Angeles");
+
 let cityForm = document.querySelector("#city-form");
-cityForm.addEventListener("submit", search);
+cityForm.addEventListener("submit", handleSubmit);
 
 //let fahrenheitLink = document.querySelector("#fahrenheight");
 //fahrenheitLink.addEventListener("click", convertToFahrenheit);
