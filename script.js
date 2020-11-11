@@ -48,6 +48,9 @@ function showTemperature(response) {
   let currentLocation = document.querySelector("h1");
   let location = response.data.name;
   currentLocation.innerHTML = location;
+  let lowElement = Math.round(response.data.main.temp_min);
+  let low = document.querySelector("#low");
+  low.innerHTML = `Low Temperature ${lowElement} °C`;
 }
 
 let button = document.querySelector("#current");
