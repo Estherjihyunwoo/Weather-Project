@@ -60,6 +60,11 @@ function showTemperature(response) {
   let feelElement = Math.round(response.data.main.feels_like);
   let element = document.querySelector("#feels");
   element.innerHTML = `Feels like ${feelElement} °C`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let button = document.querySelector("#current");
