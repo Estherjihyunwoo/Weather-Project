@@ -74,7 +74,6 @@ function formatDate(timestamp) {
 }
 
 function showWeather(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   let temperatureElement = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temperature");
