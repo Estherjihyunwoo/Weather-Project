@@ -123,7 +123,7 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   //let citySearch = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
+  let cityInputElement = document.querySelector("#city-input");
   //citySearch.innerHTML = cityInput.value;
   //let city = document.querySelector("#city-input").value;
   search(cityInputElement.value);
