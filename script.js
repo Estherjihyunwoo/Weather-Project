@@ -51,6 +51,15 @@ function showTemperature(response) {
   let lowElement = Math.round(response.data.main.temp_min);
   let low = document.querySelector("#low");
   low.innerHTML = `Low Temperature ${lowElement} °C`;
+  let humidityElement = response.data.main.humidity;
+  let hum = document.querySelector("#humidity");
+  hum.innerHTML = `💧 Humidity ${humidityElement}%`;
+  let windElement = response.data.wind.speed;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `🌬 Wind ${windElement} mph`;
+  let feelElement = Math.round(response.data.main.feels_like);
+  let element = document.querySelector("#feels");
+  element.innerHTML = `Feels like ${feelElement} °C`;
 }
 
 let button = document.querySelector("#current");
