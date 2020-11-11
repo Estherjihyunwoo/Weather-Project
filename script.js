@@ -44,12 +44,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = (
-    <img
-      src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-      alt="sunny"
-    />
-  )`${temperature} °C | °F`;
+  temperatureElement.innerHTML = `${temperature} °C | °F`;
   let currentLocation = document.querySelector("h1");
   let location = response.data.name;
   currentLocation.innerHTML = location;
