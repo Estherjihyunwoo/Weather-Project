@@ -70,28 +70,28 @@ function showTemperature(response) {
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
 
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
-}
+//function formatDate(timestamp) {
+// let date = new Date(timestamp);
+// let hours = date.getHours();
+// let minutes = date.getMinutes();
+//let days = [
+// "Sunday",
+// "Monday",
+//  "Tuesday",
+// "Wednesday",
+//"Thursday",
+// "Friday",
+//"Saturday",
+//];
+//let day = days[date.getDay()];
+//return `${day} ${hours}:${minutes}`;
+//}
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let temperatureElement = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = `${temperatureElement} `;
+  temp.innerHTML = `${temperatureElement}`;
   let humidityElement = response.data.main.humidity;
   let hum = document.querySelector("#humidity");
   hum.innerHTML = `💧 Humidity ${humidityElement}%`;
@@ -134,8 +134,8 @@ search("Los Angeles");
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleSubmit);
 
-let fahrenheitLink = document.querySelector("#fahrenheight");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
+//let fahrenheitLink = document.querySelector("#fahrenheight");
+//fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 //Bonus
 function convertToFahrenheit(event) {

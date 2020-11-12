@@ -1,85 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="style.css" type="text/css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  </head>
 
 <body>
-
-  <div class="container">
-
-    <div class="card">
-      <div class="card-body">
-
-          <form id="city-form">
-            <div class="row">
-              <div class="col-6">
-                <input types="search" placeholder="📍 Type a city ..." autofocus="on" autocomplete="off"
-                  class="form-control shadow-sm" id="city-input" /> </div>
-              <div class="col-3-sm"> <input type="submit" value="search" class="form-control btn btn-primary shadow-sm"
-                  id="button" /></div>
-              <div class="col-3" id="current"> <input type="submit" value="current location"
-                  class="btn btn-success shadow-sm" id="button2" /> </div>
+<div class="container">
+<div class="card">
+<div class="card-body">
+<form id="city-form">
+ <div class="row">
+          <div class="col-6">
+            <input types="search" placeholder="📍 Type a city ..." autofocus="on" autocomplete="off"
+              class="form-control shadow-sm" id="city-input"> </div>
+          <div class="col-3-sm"> <input type="submit" value="search" class="form-control btn btn-primary shadow-sm"
+              id="button"></div>
+          <div class="col-3" id="current"> <input type="submit" value="current location"
+              class="btn btn-success shadow-sm" id="button2" /> </div>
         </div>
 
-        </form>
-
-        <div class = "overview"> 
-        <h1 id="city">LOS ANGELES</h1>
-        <p>Last updated  ⏰  <span id="date"> </span></p>
+        <div class="overview">
+          <h1 id="city">LOS ANGELES</h1>
+          <p>Last updated ⏰ <span id="date"> </span></p>
         </div>
 
-        <div class ="weather-temperature">
-        <img src=" " alt="sunny" id ="icon"/> 
-          <strong id ="temperature"></strong>
-          <span class = "units">
-          <a href="#" id="celsius-link" class="active"> °C</a> | 
-          <a href="#" id="fahrenheit-link">°F</a>
-          </span>
-      </div>
-    
-        <div class="detail">
-          <div class="row">
-            <div class="col-3 col-sm-3" id="feels">
-              <p>Feels Like C</p>
-            </div>
-            <div class="col-3 col-sm-3" id="low">
-              <p>Low temperature C</p>
-            </div>
-            <div class="col-3 col-sm-3" id="wind">
-              <p>🌬Wind mph</p>
-            </div>
-            <div class="col-3 col-sm-3" id="humidity">
-              <p>💧Humidity %</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="weather-temperature">
+  <img src=" " alt="sunny" id="icon" />
+  <strong id="temperature"></strong>
+  <span class="units">
+    <a href="#" id="celsius-link" class="active"> °C</a> |
+    <a href="#" id="fahrenheit-link">°F</a>
+  </span>
+</div>
+
+<div class="detail">
+  <div class="row">
+    <div class="col-3 col-sm-3" id="feels">
+      <p>Feels Like C</p>
+    </div>
+    <div class="col-3 col-sm-3" id="low">
+      <p>Low temperature C</p>
+    </div>
+    <div class="col-3 col-sm-3" id="wind">
+      <p>🌬Wind mph</p>
+    </div>
+    <div class="col-3 col-sm-3" id="humidity">
+      <p>💧Humidity %</p>
+    </div>
+  </div>
+    </div>
+    </div>
 
 
-      
-          <button type="button" class="btn btn-primary btn-lg"  id="next">Forecast for the next days 👉</button>
-    
+      <button type="button" class="btn btn-primary btn-lg" id="next">Forecast for the next days 👉</button>
+
       <div class="row weather-forecast" id="forecast"></div>
 
     </div>
     <small>
-<a href="https://github.com/Estherjihyunwoo/Weather-Project"
-    target="_blank"> Open-source code</a> by Esther Woo 👩🏻‍💻
+      <a href="https://github.com/Estherjihyunwoo/Weather-Project" target="_blank"> Open-source code</a> by Esther Woo
+      👩🏻‍💻
     </small>
+
   </div>
   </div>
   </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 

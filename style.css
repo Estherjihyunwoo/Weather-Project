@@ -36,10 +36,10 @@ p {
 
 .card {
   background: white;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 .location {
   font-size: 20px;
@@ -83,6 +83,61 @@ p {
   display: block;
   margin: 0 auto;
   text-align: center;
+  margin-top: -50px;
+}
+
+.weather-temperature img {
+  position: relative;
+  font-size: 16px;
+  top: 90px;
+  right: 80px;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 20px;
+  top: -30px;
+  left: 80px;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 10px;
+}
+
+.weather-forecast h3 {
+  color: rgb(186, 186, 186);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+  color: rgb(135, 135, 135);
+  font-size: 13px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
 }
 
 #date {
@@ -111,10 +166,4 @@ p {
   font-family: "Roboto", serif;
   color: white;
   margin-top: 30px;
-}
-
-#myResource {
-  display: block;
-  margin: 0 auto;
-  font-size: 16px;
 }
