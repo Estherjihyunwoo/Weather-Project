@@ -39,7 +39,9 @@ p {
   max-width: 1000px;
   margin: 0 auto;
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  padding-bottom: 50px;
+  padding-bottom: 100px;
+  display: block;
+  margin: 120px;
 }
 .location {
   font-size: 20px;
@@ -72,11 +74,6 @@ p {
   font-size: 15px;
   font-family: "Roboto", serif;
   margin-top: 40px;
-}
-
-.card {
-  display: block;
-  margin: 120px;
 }
 
 .weather-temperature {
@@ -148,8 +145,10 @@ p {
   font-family: "Roboto", serif;
 }
 #next {
-  margin: 20px;
-  padding: 20px;
+  display: block;
+  margin-left: 250px;
+  margin-top: 30px;
+  padding: 10px;
   color: white;
   font-family: "Roboto", serif;
 }

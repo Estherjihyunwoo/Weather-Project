@@ -18,14 +18,18 @@
 <div class="card-body">
 <form id="city-form">
  <div class="row">
-          <div class="col-6">
+          <div class="col-4">
             <input types="search" placeholder="📍 Type a city ..." autofocus="on" autocomplete="off"
               class="form-control shadow-sm" id="city-input"> </div>
-          <div class="col-3-sm"> <input type="submit" value="search" class="form-control btn btn-primary shadow-sm"
+          <div class="col-2-sm"> <input type="submit" value="search" class="form-control btn btn-primary shadow-sm"
               id="button"></div>
-          <div class="col-3" id="current"> <input type="submit" value="current location"
+          <div class="col-2" id="current"> <input type="submit" value="current location"
               class="btn btn-success shadow-sm" id="button2" /> </div>
+              <div class="col-3" id="current"> <input type="submit" value="Forecast for the next days 👉" class="btn btn-dark shadow-sm"
+                  id="button2" /> </div>
+            
         </div>
+        </form>
 
         <div class="overview">
           <h1 id="city">LOS ANGELES</h1>
@@ -33,7 +37,7 @@
         </div>
 
 <div class="weather-temperature">
-  <img src=" " alt="sunny" id="icon" />
+  <img src=" " alt="weathericon" id="icon" />
   <strong id="temperature"></strong>
   <span class="units">
     <a href="#" id="celsius-link" class="active"> °C</a> |
@@ -60,7 +64,7 @@
     </div>
 
 
-      <button type="button" class="btn btn-primary btn-lg" id="next">Forecast for the next days 👉</button>
+    
 
       <div class="row weather-forecast" id="forecast"></div>
 
