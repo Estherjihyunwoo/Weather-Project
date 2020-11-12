@@ -39,7 +39,6 @@ p {
   max-width: 800px;
   margin: 0 auto;
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-
   padding-bottom: 30px;
 }
 .location {
@@ -102,7 +101,7 @@ p {
 
 #next:hover {
   font-family: "Roboto", serif;
-  color: orange;
+  color: #ffd650;
 }
 
 #temperature {
