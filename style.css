@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  color: #939aa9;
+  color: white;
   margin-top: 60px;
   font-family: "Roboto", sans-serif;
   padding-top: 60px;
@@ -14,11 +14,11 @@ form {
 
 small {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Roboto", serif;
   margin-top: -100px;
   margin-left: 120px;
-  color: #939aa9;
+  color: black;
   max-width: 800px;
 }
 
@@ -26,23 +26,33 @@ span {
   text-align: center;
 }
 
+p {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  font-family: "Roboto", serif;
+}
+
 .card {
   background: white;
   max-width: 800px;
   margin: 0 auto;
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+
+  padding-bottom: 30px;
 }
 .location {
   font-size: 20px;
   text-align: center;
-  color: #939aa9;
+  color: white;
   margin-top: 30px;
   font-family: "Peddana", serif;
 }
 
 .low {
   font-size: 20px;
-  color: #939aa9;
+  color: white;
   text-align: center;
   padding-top: 50px;
   font-family: "Roboto", sans-serif;
@@ -53,12 +63,12 @@ span {
   margin-top: 30px;
   margin-bottom: 50px;
   font-size: 16px;
-  color: #939aa9;
+  color: orange;
   font-family: "Roboto", serif;
 }
 
 .detail {
-  color: #939aa9;
+  color: white;
   text-align: center;
   font-size: 15px;
   font-family: "Roboto", serif;
@@ -70,22 +80,29 @@ span {
   margin: 120px;
 }
 
+.weather-temperature {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 #date {
   font-size: 18px;
-  color: #939aa9;
+  color: white;
   text-align: center;
   margin-top: 20px;
   font-family: "Roboto", serif;
 }
 #next {
-  margin-left: 50px;
-  color: lightblue;
+  margin: 20px;
+  padding: 20px;
+  color: white;
   font-family: "Roboto", serif;
 }
 
 #next:hover {
-  color: black;
   font-family: "Roboto", serif;
+  color: orange;
 }
 
 #temperature {
@@ -93,12 +110,12 @@ span {
   display: block;
   margin: 0 auto;
   font-family: "Roboto", serif;
-  color: black;
+  color: white;
   margin-top: 30px;
 }
 
 #myResource {
   display: block;
   margin: 0 auto;
-  font-size: 12px;
+  font-size: 16px;
 }

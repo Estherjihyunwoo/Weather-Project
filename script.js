@@ -44,7 +44,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature} °C | °F`;
+  temperatureElement.innerHTML = `${temperature}`;
   let currentLocation = document.querySelector("h1");
   let location = response.data.name;
   currentLocation.innerHTML = location;
@@ -91,7 +91,7 @@ function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let temperatureElement = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = `${temperatureElement} °C | °F `;
+  temp.innerHTML = `${temperatureElement} `;
   let humidityElement = response.data.main.humidity;
   let hum = document.querySelector("#humidity");
   hum.innerHTML = `💧 Humidity ${humidityElement}%`;
@@ -134,8 +134,8 @@ search("Los Angeles");
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleSubmit);
 
-//let fahrenheitLink = document.querySelector("#fahrenheight");
-//fahrenheitLink.addEventListener("click", convertToFahrenheit);
+let fahrenheitLink = document.querySelector("#fahrenheight");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 //Bonus
 function convertToFahrenheit(event) {
