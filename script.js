@@ -145,7 +145,7 @@ function displayFahrenheitTemperature(event) {
   let fahrenheitTemperature = (14 * 9) / 5 + 32;
   //alert(fahrenheitTemperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = fahrenheitTemperature;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 //let celsiusLink = document.querySelector("#celsius");
