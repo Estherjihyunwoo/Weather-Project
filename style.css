@@ -80,13 +80,13 @@ p {
   display: block;
   margin: 0 auto;
   text-align: center;
-  margin-top: -50px;
+  margin-top: -90px;
 }
 
 .weather-temperature img {
   position: relative;
   font-size: 16px;
-  top: 90px;
+  top: 100px;
   right: 80px;
 }
 
@@ -94,7 +94,7 @@ p {
   position: relative;
   font-size: 20px;
   top: -40px;
-  left: 50px;
+  left: 80px;
 }
 
 .weather-temperature .active {

@@ -104,8 +104,8 @@ function showWeather(response) {
   let lowElement = Math.round(response.data.main.temp_min);
   let low = document.querySelector("#low");
   low.innerHTML = `Low Temperature ${lowElement} °C`;
-  let dateElement = dococument.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  //let dateElement = dococument.querySelector("#date");
+  //dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -134,27 +134,27 @@ search("Los Angeles");
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleSubmit);
 
-//let fahrenheitLink = document.querySelector("#fahrenheight");
-//fahrenheitLink.addEventListener("click", convertToFahrenheit);
+//function convertToCelsius(event) {
+// event.preventDefault();
+// let temperatureElement = document.querySelector("#temperature");
+//temperatureElement.innerHTML = 21;
+//}
 
-//Bonus
-function convertToFahrenheit(event) {
+function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  //alert(fahrenheitTemperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  temperatureElement.innerHTML = fahrenheitTemperature;
 }
 
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 21;
-}
+//let celsiusLink = document.querySelector("#celsius");
+//celsiusLink.addEventListener("click", convertToCelsius);
 
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertToCelsius);
+//let celsiusTemperature = Math.round(temperature);
 
-let celsiusTemperature = Math.round(temperature);
-let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", displayFahrenheitTemperature);
 
 //let weather = {
 //paris: {
