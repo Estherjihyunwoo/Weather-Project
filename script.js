@@ -111,6 +111,8 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -129,32 +131,33 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Los Angeles");
-
-let cityForm = document.querySelector("#city-form");
-cityForm.addEventListener("submit", handleSubmit);
-
-//function convertToCelsius(event) {
-// event.preventDefault();
-// let temperatureElement = document.querySelector("#temperature");
-//temperatureElement.innerHTML = 21;
-//}
-
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   //alert(fahrenheitTemperature);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-//let celsiusLink = document.querySelector("#celsius");
-//celsiusLink.addEventListener("click", convertToCelsius);
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  //alert(fahrenheitTemperature);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
-//let celsiusTemperature = Math.round(temperature);
+search("Los Angeles");
+
+let celsiusTemperature = null;
+
+let cityForm = document.querySelector("#city-form");
+cityForm.addEventListener("submit", handleSubmit);
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 //let weather = {
 //paris: {
