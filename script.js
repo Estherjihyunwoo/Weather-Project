@@ -70,22 +70,33 @@ function showTemperature(response) {
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
 
-//function formatDate(timestamp) {
-// let date = new Date(timestamp);
-// let hours = date.getHours();
-// let minutes = date.getMinutes();
-//let days = [
-// "Sunday",
-// "Monday",
-//  "Tuesday",
-// "Wednesday",
-//"Thursday",
-// "Friday",
-//"Saturday",
-//];
-//let day = days[date.getDay()];
-//return `${day} ${hours}:${minutes}`;
-//}
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+
+  function formatHours(timestamp) {
+    return `${hours}:${minutes}`;
+  }
+}
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -112,14 +123,40 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   celsiusTemperature = response.data.main.temp;
+}
+
+function displayForecast(response) {
+  letforecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-2">
+  <h3>${formatHours(forecast.dt * 1000)}</h3>
+  <img src = "http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png" alt="" />
+  <div class="weather-forecast-temperature">
+ <strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
+      forecast.main.temp_min
+    )}
+  </div>
+  </div>`;
+  }
 }
 
 function search(city) {
   let apiKey = "0b69e36f14bcfaa42ecb4ad8f3652168";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
+
+  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).than(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -129,6 +166,7 @@ function handleSubmit(event) {
   //citySearch.innerHTML = cityInput.value;
   //let city = document.querySelector("#city-input").value;
   search(cityInputElement.value);
+  search("Los Angeles");
 }
 
 function displayFahrenheitTemperature(event) {
@@ -148,8 +186,6 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-search("Los Angeles");
-
 let celsiusTemperature = null;
 
 let cityForm = document.querySelector("#city-form");
@@ -160,40 +196,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-//let weather = {
-//paris: {
-//  temp: 19.7,
-//  humidity: 80
-// },
-//"los angeles": {
-//  temp: 21,
-//  humidity: 59
-//},
-//seoul: {
-//  temp: 30.2,
-//  humidity: 20
-//},
-//"san francisco": {
-// temp: 20.9,
-//  humidity: 100
-//},
-//moscow: {
-//  temp: -5,
-//  humidity: 20
-// }
-//};
-//let city = prompt("Enter a city?");
-//city = city.toLowerCase();
-//if (weather[city] !== undefined) {
-// let temperature = weather[city].temp;
-// let humidity = weather[city].humidity;
-
-//alert(
-// `It is currently ${celsiusTemperature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%`
-// );
-//} else {
-//alert(
-//   `sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-// );
-//}

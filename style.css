@@ -14,12 +14,17 @@ form {
 
 small {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Roboto", serif;
   margin-top: -100px;
-  margin-left: 120px;
+  margin-left: 490px;
   color: black;
-  max-width: 800px;
+  max-width: 820px;
+}
+
+a {
+  font-size: 14px;
+  max-width: 820px;
 }
 
 span {
@@ -59,28 +64,19 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
-.bring {
-  margin-left: 50px;
-  margin-top: 30px;
-  margin-bottom: 50px;
-  font-size: 16px;
-  color: orange;
-  font-family: "Roboto", serif;
-}
-
 .detail {
   color: white;
   text-align: center;
   font-size: 15px;
   font-family: "Roboto", serif;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .weather-temperature {
   display: block;
   margin: 0 auto;
   text-align: center;
-  margin-top: -90px;
+  margin-top: -40px;
 }
 
 .weather-temperature img {
@@ -92,13 +88,13 @@ p {
 
 .weather-temperature .units {
   position: relative;
-  font-size: 20px;
+  font-size: 25px;
   top: -40px;
   left: 80px;
 }
 
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  color: white;
   cursor: default;
 }
 
@@ -107,11 +103,12 @@ p {
 }
 
 .weather-forecast {
-  margin-top: 10px;
+  display: block;
+  margin-top: 50px;
 }
 
 .weather-forecast h3 {
-  color: rgb(186, 186, 186);
+  color: white;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
@@ -129,7 +126,7 @@ p {
 
 .weather-forecast-temperature {
   text-align: center;
-  color: rgb(135, 135, 135);
+  color: white;
   font-size: 13px;
   font-weight: 400;
   height: auto;
