@@ -65,8 +65,8 @@ function showWeather(response) {
   let lowElement = Math.round(response.data.main.temp_min);
   let low = document.querySelector("#low");
   low.innerHTML = `Low Temperature ${lowElement} °C`;
-  let dateElement = dococument.querySelector("#date");
-  dateElement = formatDate(response.data.dt * 1000);
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
