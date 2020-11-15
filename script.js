@@ -16,6 +16,7 @@ function formatDate(timestamp) {
 
 function formatHours(timestamp) {
   let date = new Date(timestamp);
+
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -34,38 +35,11 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
   let apiKey = "0b69e36f14bcfaa42ecb4ad8f3652168";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showWeather);
 }
 
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature}`;
-  let currentLocation = document.querySelector("h1");
-  let location = response.data.name;
-  currentLocation.innerHTML = location;
-  let lowElement = Math.round(response.data.main.temp_min);
-  let low = document.querySelector("#low");
-  low.innerHTML = `Low Temperature ${lowElement} °C`;
-  let humidityElement = response.data.main.humidity;
-  let hum = document.querySelector("#humidity");
-  hum.innerHTML = `💧 Humidity ${humidityElement}%`;
-  let windElement = response.data.wind.speed;
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = `🌬 Wind ${windElement} mph`;
-  let feelElement = Math.round(response.data.main.feels_like);
-  let element = document.querySelector("#feels");
-  element.innerHTML = `Feels like ${feelElement} °C`;
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
 }
 
 let button = document.querySelector("#current");
@@ -75,6 +49,9 @@ function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let temperatureElement = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temperature");
+  let currentLocation = document.querySelector("h1");
+  let location = response.data.name;
+  currentLocation.innerHTML = location;
   temp.innerHTML = `${temperatureElement}`;
   let humidityElement = response.data.main.humidity;
   let hum = document.querySelector("#humidity");
@@ -88,8 +65,8 @@ function showWeather(response) {
   let lowElement = Math.round(response.data.main.temp_min);
   let low = document.querySelector("#low");
   low.innerHTML = `Low Temperature ${lowElement} °C`;
-  //let dateElement = dococument.querySelector("#date");
-  //dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let dateElement = dococument.querySelector("#date");
+  dateElement = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
