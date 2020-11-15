@@ -1,4 +1,5 @@
-function current(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -9,22 +10,22 @@ function current(date) {
     "Saturday",
   ];
 
-  let currentDay = days[date.getDay()];
-  let currentHour = date.getHours();
-  if (currentHour < 10) {
-    currentHour = `0${currentHour}`;
-  }
-  let currentMinute = date.getMinutes();
-  if (currentMinute < 10) {
-    currentMinute = `0${currentMinute}`;
-  }
-
-  currents.innerHTML = `${currentDay} ${currentHour}:${currentMinute}`;
+  let day = days[date.getDay()];
+  return `${day} ${formatHours(timestamp)}`;
 }
 
-let currents = document.querySelector("#date");
-let currentTime = new Date();
-console.log(current(currentTime));
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 
 function showPosition(position) {
   console.log(position.coords.latitude);
@@ -69,19 +70,6 @@ function showTemperature(response) {
 
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
-
-function formatHours(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
-}
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
