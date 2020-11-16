@@ -40,29 +40,9 @@ function showPosition(position) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function getCurrentPosition() {
+function getCurrentPosition(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(displayForecast);
-
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = null;
-  let forecast = null;
-
-  for (let index = 0; index < 6; index++) {
-    forecast = response.data.list[index];
-    forecastElement.innerHTML += `<div class="col-2">
-  <h3>${formatHours(forecast.dt * 1000)}</h3>
-  <img src = "https://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png" alt="" />
-  <div class="weather-forecast-temperature">
- <strong>${Math.round(forecast.main.temp_max)}°</strong>${Math.round(
-      forecast.main.temp_min
-    )}
-  </div>
-  </div>`;
-  }
 }
 
 let button = document.querySelector("#current");
